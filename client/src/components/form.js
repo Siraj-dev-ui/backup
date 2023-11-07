@@ -113,6 +113,7 @@ function Form() {
                   color: 'white',
                   cursor: 'pointer',
                 }}
+                className='btn btn-success m-2'
               >
                 Add Product
               </button>
@@ -123,7 +124,6 @@ function Form() {
 
       <div>
         <table class='table mx-auto'>
-          //{' '}
           <tbody>
             {products.map((product) => {
               return (
@@ -160,7 +160,6 @@ function Form() {
                 </tr>
               );
             })}
-            //{' '}
           </tbody>
         </table>
         {/* {products.map((product) => {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   MDBContainer,
   MDBNavbar,
@@ -9,18 +9,18 @@ import {
   MDBNavbarItem,
   MDBNavbarLink,
   MDBCollapse,
-} from "mdb-react-ui-kit";
-import { Link } from "react-router-dom";
-import logo from "../assets/Opulent-logo.png";
+} from 'mdb-react-ui-kit';
+import { Link } from 'react-router-dom';
+import logo from '../assets/Opulent-logo.png';
 
 // Define the CSS for the navigation bar
 const navStyle = {
-  backgroundColor: "#fbf9f5", // Background color
-  color: "#627571", // Text color
+  backgroundColor: '#fbf9f5', // Background color
+  color: '#627571', // Text color
 };
 
 const navLinkStyle = {
-  color: "#627571", // Text color for links
+  color: '#627571', // Text color for links
 };
 
 export default function Navbar({ setDisplayProducts }) {
@@ -31,38 +31,38 @@ export default function Navbar({ setDisplayProducts }) {
   };
 
   return (
-    <MDBNavbar expand="lg" light style={navStyle}>
-      {" "}
+    <MDBNavbar expand='lg' light style={navStyle}>
+      {' '}
       {/* Apply the defined styles */}
       <MDBContainer fluid>
-        <MDBNavbarBrand href="#">
-          <img src={logo} alt="Logo" height="30" />
+        <MDBNavbarBrand href='#'>
+          <img src={logo} alt='Logo' height='30' />
         </MDBNavbarBrand>
 
         <MDBNavbarToggler
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          aria-controls='navbarSupportedContent'
+          aria-expanded='false'
+          aria-label='Toggle navigation'
           onClick={() => setShowBasic(!showBasic)}
         >
-          <MDBIcon icon="bars" fas />
+          <MDBIcon icon='bars' fas />
         </MDBNavbarToggler>
 
         <MDBCollapse navbar show={showBasic}>
-          <MDBNavbarNav className="mr-auto mb-2 mb-lg-0">
+          <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
             <MDBNavbarItem>
-              <MDBNavbarLink active aria-current="page" href="#">
+              <MDBNavbarLink active aria-current='page' href='#'>
                 Home
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href="#">About Us</MDBNavbarLink>
+              <MDBNavbarLink href='#'>About Us</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
               {/* <Link to="/form" className="nav-link" style={navLinkStyle}></Link> */}
               <Link
-                to="/product-list"
-                className="nav-link"
+                to='/product-list'
+                className='nav-link'
                 style={navLinkStyle}
               >
                 Products
@@ -70,18 +70,25 @@ export default function Navbar({ setDisplayProducts }) {
               {/* Use Link to navigate to the "/form" route */}
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <Link to="/cart" className="nav-link" style={navLinkStyle}>
+              {/* <Link to="/form" className="nav-link" style={navLinkStyle}></Link> */}
+              <Link to='/form' className='nav-link' style={navLinkStyle}>
+                Add Product
+              </Link>
+              {/* Use Link to navigate to the "/form" route */}
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <Link to='/cart' className='nav-link' style={navLinkStyle}>
                 Cart
               </Link>
               {/* Add a link to the Cart page */}
             </MDBNavbarItem>
           </MDBNavbarNav>
 
-          <form className="d-flex input-group w-auto">
+          <form className='d-flex input-group w-auto'>
             {/* ... Search input and button ... */}
           </form>
 
-          <MDBIcon icon="shopping-cart" size="lg" className="mx-3" />
+          <MDBIcon icon='shopping-cart' size='lg' className='mx-3' />
         </MDBCollapse>
       </MDBContainer>
     </MDBNavbar>
